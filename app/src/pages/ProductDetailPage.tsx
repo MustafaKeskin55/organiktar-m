@@ -93,7 +93,7 @@ export function ProductDetailPage() {
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 md:py-8 flex-1 w-full">
         {/* Breadcrumbs */}
-        <div className="mb-6">
+        <div className="mb-4 md:mb-6">
           <Link to="/urunler" className="inline-flex items-center text-sm text-gray-600 hover:text-green-600 font-medium transition-colors">
             <ArrowLeft className="w-4 h-4 mr-1.5" />
             Ürünlere Dön
@@ -101,7 +101,7 @@ export function ProductDetailPage() {
         </div>
 
         {/* Product Summary Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 bg-white rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-8 shadow-sm border border-gray-100 mb-6 md:mb-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-8 bg-white rounded-2xl md:rounded-3xl p-4 md:p-8 shadow-sm border border-gray-100 mb-6 md:mb-10">
           
           {/* Left Column: Images */}
           <div className="lg:col-span-6 space-y-4">
@@ -152,17 +152,17 @@ export function ProductDetailPage() {
           <div className="lg:col-span-6 flex flex-col justify-between space-y-6">
             <div className="space-y-4">
               <div>
-                <p className="text-sm font-semibold text-green-700 uppercase tracking-wider">{product.category}</p>
-                <h1 className="text-2xl md:text-3xl font-extrabold text-gray-900 mt-1">{product.name}</h1>
-                <p className="text-sm text-gray-500 mt-2 flex items-center gap-1.5">
+                <p className="text-xs md:text-sm font-semibold text-green-700 uppercase tracking-wider">{product.category}</p>
+                <h1 className="text-xl md:text-3xl font-extrabold text-gray-900 mt-1">{product.name}</h1>
+                <p className="text-xs md:text-sm text-gray-500 mt-1 md:mt-2 flex items-center gap-1.5">
                   Üretici: <span className="font-semibold text-gray-800 hover:underline cursor-pointer">{product.producerName || 'Yerel Çiftçi'}</span>
                 </p>
               </div>
 
               {/* Price */}
               <div className="flex items-baseline gap-2 py-2 border-y border-gray-100">
-                <span className="text-3xl md:text-4xl font-extrabold text-green-700">₺{product.price}</span>
-                <span className="text-gray-500 text-lg">/ {product.unit || 'kg'}</span>
+                <span className="text-2xl md:text-4xl font-extrabold text-green-700">₺{product.price}</span>
+                <span className="text-gray-500 text-base md:text-lg">/ {product.unit || 'kg'}</span>
                 {product.stock > 0 ? (
                   <Badge className="ml-4 bg-green-50 text-green-700 border border-green-200 hover:bg-green-50">Stokta Var</Badge>
                 ) : (
@@ -171,12 +171,12 @@ export function ProductDetailPage() {
               </div>
 
               {/* Short Bio */}
-              <p className="text-gray-600 text-base leading-relaxed">
+              <p className="text-gray-600 text-sm md:text-base leading-relaxed">
                 {product.description || 'Kimyasal ilaç kalıntısı barındırmayan, geleneksel tarım yöntemleriyle yerel topraklarımızda üretilmiş taze organik mahsul.'}
               </p>
 
               {/* Features Summary */}
-              <div className="grid grid-cols-2 gap-4 text-sm bg-gray-50 p-4 rounded-xl border border-gray-100">
+              <div className="grid grid-cols-2 gap-3 md:gap-4 text-xs md:text-sm bg-gray-50 p-3 md:p-4 rounded-xl border border-gray-100">
                 <div>
                   <span className="text-gray-500 block">Stok Adedi</span>
                   <span className="font-semibold text-gray-800">{product.stock || 80} {product.unit || 'kg'}</span>
@@ -209,21 +209,21 @@ export function ProductDetailPage() {
                 </div>
               </div>
 
-              <div className="flex flex-wrap sm:flex-nowrap gap-3">
+              <div className="flex flex-wrap sm:flex-nowrap gap-2 md:gap-3">
                 <Button
                   size="lg"
                   disabled={product.stock === 0}
-                  className="flex-1 bg-green-600 hover:bg-green-700 text-white font-semibold py-3 h-12 shadow-sm rounded-xl"
+                  className="flex-1 bg-green-600 hover:bg-green-700 text-white font-semibold py-2 md:py-3 h-10 md:h-12 shadow-sm rounded-xl text-sm md:text-base"
                   onClick={handleAddToCart}
                 >
-                  <ShoppingCart className="w-5 h-5 mr-2" />
+                  <ShoppingCart className="w-4 h-4 md:w-5 md:h-5 mr-2" />
                   Sepete Ekle
                 </Button>
-                <Button size="lg" variant="outline" className="h-12 w-12 p-0 rounded-xl hover:text-red-500">
-                  <Heart className="w-5 h-5" />
+                <Button size="lg" variant="outline" className="h-10 w-10 md:h-12 md:w-12 p-0 rounded-xl hover:text-red-500">
+                  <Heart className="w-4 h-4 md:w-5 md:h-5" />
                 </Button>
-                <Button size="lg" variant="outline" className="h-12 w-12 p-0 rounded-xl hover:text-blue-500">
-                  <Share2 className="w-5 h-5" />
+                <Button size="lg" variant="outline" className="h-10 w-10 md:h-12 md:w-12 p-0 rounded-xl hover:text-blue-500">
+                  <Share2 className="w-4 h-4 md:w-5 md:h-5" />
                 </Button>
               </div>
             </div>
@@ -233,36 +233,36 @@ export function ProductDetailPage() {
         {/* Detailed Tabs Panel */}
         <div className="bg-white rounded-2xl md:rounded-3xl border border-gray-100 shadow-sm overflow-hidden mb-8 md:mb-12">
           {/* Tab Links */}
-          <div className="flex overflow-x-auto whitespace-nowrap border-b text-sm sm:text-base font-semibold hide-scrollbar">
+          <div className="flex overflow-x-auto whitespace-nowrap border-b text-xs md:text-sm font-semibold hide-scrollbar">
             <button
               onClick={() => setActiveTab('info')}
-              className={`flex-1 py-4 text-center border-b-2 transition-all ${
+              className={`flex-1 py-3 md:py-4 px-2 md:px-4 text-center border-b-2 transition-all ${
                 activeTab === 'info'
                   ? 'border-green-600 text-green-700 bg-green-50/10'
                   : 'border-transparent text-gray-500 hover:text-gray-800'
               }`}
             >
-              Ürün Detayları & Faydaları
+              Detaylar
             </button>
             <button
               onClick={() => setActiveTab('farmer')}
-              className={`flex-1 py-4 text-center border-b-2 transition-all ${
+              className={`flex-1 py-3 md:py-4 px-2 md:px-4 text-center border-b-2 transition-all ${
                 activeTab === 'farmer'
                   ? 'border-green-600 text-green-700 bg-green-50/10'
                   : 'border-transparent text-gray-500 hover:text-gray-800'
               }`}
             >
-              Çiftçi Hikayesi & Garanti
+              Çiftçi Hikayesi
             </button>
             <button
               onClick={() => setActiveTab('reviews')}
-              className={`flex-1 py-4 text-center border-b-2 transition-all ${
+              className={`flex-1 py-3 md:py-4 px-2 md:px-4 text-center border-b-2 transition-all ${
                 activeTab === 'reviews'
                   ? 'border-green-600 text-green-700 bg-green-50/10'
                   : 'border-transparent text-gray-500 hover:text-gray-800'
               }`}
             >
-              Değerlendirmeler (3)
+              Yorumlar (3)
             </button>
           </div>
 
@@ -397,9 +397,9 @@ export function ProductDetailPage() {
         {/* Related Products Carousel */}
         {relatedProducts.length > 0 && (
           <div className="space-y-6 mb-12">
-            <div className="flex justify-between items-center">
-              <h2 className="text-2xl font-bold text-gray-900">İlginizi Çekebilecek Benzer Ürünler</h2>
-              <Link to="/urunler" className="text-green-600 hover:text-green-700 font-semibold text-sm">Tümünü Gör</Link>
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-lg md:text-2xl font-bold text-gray-900">Benzer Ürünler</h2>
+              <Link to="/urunler" className="text-green-600 hover:text-green-700 font-semibold text-xs md:text-sm">Tümünü Gör</Link>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-6">
               {relatedProducts.map(rp => (
