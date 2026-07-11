@@ -12,6 +12,7 @@ import {
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 
 export function AboutPage() {
   const stats = [
