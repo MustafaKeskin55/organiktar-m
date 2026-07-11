@@ -48,13 +48,13 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
       <div className="container mx-auto px-4">
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-14 md:h-16 items-center justify-between">
           {/* Web Logo - Navbar */}
           <Link to="/" className="flex items-center">
             <img 
               src={webLogo} 
               alt="ÇiftçidenKapına" 
-              className="h-12 md:h-16 w-auto object-contain"
+              className="h-8 md:h-14 w-auto object-contain"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
                 target.style.display = 'none';
@@ -223,7 +223,7 @@ export function Header() {
                     <img 
                       src={webLogo} 
                       alt="ÇiftçidenKapına" 
-                      className="h-20 w-auto object-contain"
+                      className="h-10 w-auto object-contain"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
                         target.style.display = 'none';

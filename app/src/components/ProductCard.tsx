@@ -34,7 +34,7 @@ export function ProductCard({ product }: ProductCardProps) {
     <Link to={`/product/${product.id}`} className="group">
       <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow">
         {/* Image Container */}
-        <div className="relative aspect-[4/3] bg-gray-100 overflow-hidden">
+        <div className="relative aspect-[3/2] sm:aspect-[4/3] bg-gray-100 overflow-hidden">
           <img
             src={mainImage}
             alt={product.name}
@@ -74,7 +74,7 @@ export function ProductCard({ product }: ProductCardProps) {
         </div>
 
         {/* Content */}
-        <div className="p-4">
+        <div className="p-2.5 sm:p-4">
           {/* Producer Info */}
           <div className="flex items-center gap-2 mb-2">
             {product.producerImage ? (
@@ -96,35 +96,36 @@ export function ProductCard({ product }: ProductCardProps) {
           </div>
 
           {/* Product Name */}
-          <h3 className="font-semibold text-gray-900 mb-1 line-clamp-1">
+          <h3 className="font-semibold text-gray-900 mb-1 line-clamp-1 text-sm sm:text-base">
             {product.name}
           </h3>
 
           {/* Rating */}
           <div className="flex items-center gap-1 mb-2">
-            <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-            <span className="text-sm font-medium">{product.rating || 4.5}</span>
-            <span className="text-sm text-gray-500">
+            <Star className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-yellow-400 text-yellow-400" />
+            <span className="text-xs sm:text-sm font-medium">{product.rating || 4.5}</span>
+            <span className="text-xs sm:text-sm text-gray-500 hidden sm:inline">
               ({product.reviewCount || 0} değerlendirme)
             </span>
           </div>
 
           {/* Price & Add to Cart */}
-          <div className="flex items-center justify-between mt-3">
+          <div className="flex items-center justify-between mt-2 sm:mt-3">
             <div>
-              <span className="text-xl font-bold text-green-700">
+              <span className="text-base sm:text-xl font-bold text-green-700">
                 ₺{product.price}
               </span>
-              <span className="text-sm text-gray-500"> / {product.unit}</span>
+              <span className="text-xs sm:text-sm text-gray-500"> / {product.unit}</span>
             </div>
             <Button
               size="sm"
               onClick={handleAddToCart}
               disabled={product.stock === 0}
-              className="bg-green-600 hover:bg-green-700"
+              className="bg-green-600 hover:bg-green-700 text-xs sm:text-sm h-8 sm:h-9 px-2 sm:px-3"
             >
-              <Plus className="w-4 h-4 mr-1" />
-              Sepete Ekle
+              <Plus className="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-0.5 sm:mr-1" />
+              <span className="hidden sm:inline">Sepete Ekle</span>
+              <span className="sm:hidden">Ekle</span>
             </Button>
           </div>
         </div>
