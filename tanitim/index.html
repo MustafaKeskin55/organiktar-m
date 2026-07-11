@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ÇiftçidenKapına - Premium Organik Deneyim</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            glow: 'rgba(34, 197, 94, 0.5)',
+                        },
+                        surface: {
+                            900: '#09090b',
+                            800: '#18181b',
+                            700: '#27272a',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'blob': 'blob 7s infinite',
+                        'fade-up': 'fadeUp 1s ease-out forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        fadeUp: {
+                            '0%': { opacity: 0, transform: 'translateY(30px)' },
+                            '100%': { opacity: 1, transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #09090b;
+            color: #f4f4f5;
+            overflow-x: hidden;
+        }
+        .glass-panel {
+            background: rgba(24, 24, 27, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #4ade80, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .grid-pattern {
+            background-image: linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="grid-pattern antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Ambient Background Glows -->
+    <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-[-10%] left-[-10%] w-[40vw] h-[40vw] bg-brand-500/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob"></div>
+        <div class="absolute top-[20%] right-[-10%] w-[35vw] h-[35vw] bg-emerald-600/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob animation-delay-2000"></div>
+        <div class="absolute bottom-[-20%] left-[20%] w-[50vw] h-[50vw] bg-green-900/40 rounded-full mix-blend-screen filter blur-[120px] animate-blob animation-delay-4000"></div>
+    </div>
+
+    <!-- Premium Navbar -->
+    <nav class="fixed w-full z-50 glass-panel border-b border-white/10 py-3 md:py-4 transition-all">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 flex justify-between items-center gap-4">
+            <div class="flex items-center gap-2 md:gap-3 shrink-0">
+                <div class="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gradient-to-br from-brand-400 to-brand-600 flex items-center justify-center text-white font-bold text-xl md:text-2xl shadow-[0_0_20px_rgba(34,197,94,0.4)] shrink-0">Ç</div>
+                <span class="font-serif text-lg md:text-2xl font-bold text-white tracking-wide shrink-0 hidden sm:block">ÇiftçidenKapına</span>
+            </div>
+            <div class="hidden md:flex gap-10 font-medium text-sm text-gray-300">
+                <a href="#kesfet" class="hover:text-brand-400 transition-colors whitespace-nowrap">Platformu Keşfet</a>
+                <a href="#kalite" class="hover:text-brand-400 transition-colors whitespace-nowrap">Premium Kalite</a>
+                <a href="#ureticiler" class="hover:text-brand-400 transition-colors whitespace-nowrap">Üreticiler</a>
+            </div>
+            <div class="shrink-0">
+                <a href="https://organiktar-m.albakarda.workers.dev" target="_blank" class="group relative inline-flex items-center justify-center px-4 py-2 md:px-8 md:py-3 font-bold text-white transition-all duration-300 bg-brand-500 rounded-xl hover:bg-brand-400 hover:shadow-[0_0_30px_rgba(34,197,94,0.5)] overflow-hidden whitespace-nowrap text-sm md:text-base">
+                    <span class="relative z-10 flex items-center gap-2">
+                        Alışverişe Başla
+                        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </span>
+                    <div class="absolute inset-0 h-full w-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1s_infinite]"></div>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section (Stunning & Dynamic) -->
+    <section class="relative min-h-screen flex items-center pt-32 pb-20 z-10">
+        <div class="max-w-7xl mx-auto px-6 w-full">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                
+                <!-- Left: Typography & CTA -->
+                <div class="max-w-2xl opacity-0 animate-fade-up">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-brand-500/30 text-brand-400 text-sm font-semibold mb-8">
+                        <span class="relative flex h-3 w-3">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-3 w-3 bg-brand-500"></span>
+                        </span>
+                        Yeni Nesil Organik Alışveriş
+                    </div>
+                    
+                    <h1 class="text-5xl sm:text-7xl lg:text-8xl font-sans font-black tracking-tighter leading-[1.05] mb-6">
+                        Toprağın Saf <br>
+                        <span class="text-gradient font-serif italic pr-2">Mucizesi.</span>
+                    </h1>
+                    
+                    <p class="text-xl text-gray-400 mb-10 leading-relaxed max-w-lg">
+                        Süpermarket raflarını unutun. Hiçbir kimyasal değmemiş, ata tohumuyla üretilen en taze mahsuller doğrudan tarladan kapınıza geliyor.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-5">
+                        <a href="https://organiktar-m.albakarda.workers.dev" target="_blank" class="bg-white text-black px-8 py-4 rounded-2xl font-bold text-lg hover:scale-105 transition-transform flex items-center justify-center gap-2">
+                            Platformu Görüntüle
+                        </a>
+                        <a href="#kesfet" class="glass-panel px-6 sm:px-8 py-4 rounded-2xl font-bold text-lg hover:bg-white/10 transition-colors flex items-center justify-center gap-2">
+                            <svg class="w-5 h-5 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            Nasıl Çalışır?
+                        </a>
+                        <a href="assets/ciftcidenkapina-brosur.pdf" download class="glass-panel px-6 sm:px-8 py-4 rounded-2xl font-bold text-lg hover:bg-white/10 transition-colors flex items-center justify-center gap-2 border border-brand-500/30">
+                            <svg class="w-5 h-5 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                            Broşür İndir
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Right: Breathtaking Image Composition -->
+                <div class="relative opacity-0 animate-fade-up" style="animation-delay: 300ms;">
+                    <!-- Main Hero Image -->
+                    <div class="relative z-20 rounded-[2.5rem] overflow-hidden border border-white/10 shadow-[0_20px_100px_rgba(0,0,0,0.8)] animate-float">
+                        <img src="assets/desktop_hero.png" alt="Premium Organik" class="w-full h-auto object-cover scale-105 hover:scale-100 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-8 left-8">
+                            <h3 class="text-3xl font-serif font-bold text-white mb-2">Günlük Hasat</h3>
+                            <p class="text-brand-400 font-medium">%100 Doğal ve Katkısız</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Floating Stats Card -->
+                    <div class="absolute -bottom-4 -left-4 md:-bottom-10 md:-left-10 z-30 glass-panel p-4 md:p-6 rounded-3xl animate-float scale-75 md:scale-100 origin-bottom-left" style="animation-delay: -3s;">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 rounded-full bg-brand-500/20 flex items-center justify-center">
+                                <span class="text-2xl">🚜</span>
+                            </div>
+                            <div>
+                                <p class="text-3xl font-black text-white">1 Hafta</p>
+                                <p class="text-sm text-gray-400 font-medium">İçinde Teslim</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Showcase (Bento Grid Style) -->
+    <section class="py-32 relative z-10" id="kesfet">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl font-serif font-bold mb-6">Mükemmel <span class="text-gradient">Kullanıcı Deneyimi.</span></h2>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">Modern, akıcı ve güvenli. Alışveriş deneyiminizi sıfırdan tasarladık.</p>
+            </div>
+
+            <!-- Bento Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Huge Desktop Feature -->
+                <div class="md:col-span-2 glass-panel rounded-[2rem] p-6 md:p-12 relative overflow-hidden group flex flex-col md:flex-row items-center gap-6 md:gap-8">
+                    <div class="relative z-10 md:w-1/2">
+                        <h3 class="text-3xl font-bold text-white mb-4">Geniş Ekran, Detaylı İnceleme</h3>
+                        <p class="text-gray-400 leading-relaxed mb-6">Masaüstü uygulamamız ile ürünlerin en ince detaylarını, çiftçi hikayelerini ve laboratuvar analizlerini büyük ekranda inceleyin.</p>
+                        <a href="https://organiktar-m.albakarda.workers.dev" target="_blank" class="text-brand-400 font-bold flex items-center gap-2 hover:text-brand-300 transition-colors">
+                            Web'de İncele <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                    <div class="relative z-10 md:w-1/2 transform group-hover:-translate-y-2 transition-transform duration-500">
+                        <div class="bg-gray-800 rounded-t-xl p-3 flex gap-2 items-center">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        </div>
+                        <img src="assets/desktop_screenshot.png" alt="Desktop UI" class="rounded-b-xl shadow-2xl w-full border-x-4 border-b-4 border-gray-800">
+                    </div>
+                </div>
+
+                <!-- Mobile Feature -->
+                <div class="glass-panel rounded-[2rem] p-6 md:p-12 flex flex-col items-center text-center relative overflow-hidden group">
+                    <h3 class="text-2xl font-bold text-white mb-4 relative z-10">Cebinizdeki Pazar</h3>
+                    <p class="text-gray-400 text-sm mb-8 relative z-10">Mobil uyumlu altyapımızla tek tıkla sipariş verin.</p>
+                    <div class="w-full max-w-[240px] transform group-hover:-translate-y-4 transition-transform duration-500 relative">
+                        <div class="absolute -inset-2 bg-gradient-to-b from-gray-700 to-gray-900 rounded-[2.5rem] shadow-[0_0_40px_rgba(34,197,94,0.2)]"></div>
+                        <div class="absolute top-0 inset-x-0 h-6 flex justify-center z-20">
+                            <div class="w-1/2 h-4 bg-gray-900 rounded-b-xl"></div>
+                        </div>
+                        <img src="assets/mobile_screenshot.png" alt="Mobile UI" class="relative z-10 rounded-[2rem] w-full border-[6px] border-gray-900 bg-white">
+                    </div>
+                </div>
+
+                <!-- Quality Card 1 -->
+                <div class="glass-panel rounded-[2rem] p-6 md:p-8 overflow-hidden relative group">
+                    <div class="absolute inset-0 opacity-40 group-hover:scale-110 transition-transform duration-700">
+                        <img src="assets/products_view.png" alt="Teslimat" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-surface-900/80"></div>
+                    </div>
+                    <div class="relative z-10">
+                        <div class="w-12 h-12 rounded-full bg-brand-500/20 text-brand-400 flex items-center justify-center mb-6">📦</div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Soğuk Zincir</h3>
+                        <p class="text-gray-400">Ürünleriniz özel yalıtımlı, doğa dostu ambalajlarla tazeliği bozulmadan ulaşır.</p>
+                    </div>
+                </div>
+
+                <!-- Quality Card 2 -->
+                <div class="md:col-span-2 glass-panel rounded-[2rem] p-6 md:p-8 overflow-hidden relative group">
+                    <div class="absolute inset-0 opacity-30 group-hover:scale-110 transition-transform duration-700">
+                        <img src="assets/farmer_view.png" alt="Çiftçi" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-r from-surface-900 via-surface-900/80 to-transparent"></div>
+                    </div>
+                    <div class="relative z-10 md:w-2/3">
+                        <h3 class="text-4xl font-serif font-bold text-white mb-4">Adil Ticaret, Mutlu Çiftçi</h3>
+                        <p class="text-lg text-gray-300 leading-relaxed mb-6">Aracıları ortadan kaldırarak hem sizin uygun fiyata taze ürün almanızı sağlıyor, hem de çiftçimizin emeğinin karşılığını doğrudan kendisine veriyoruz.</p>
+                        <a href="https://organiktar-m.albakarda.workers.dev/ureticiler" target="_blank" class="inline-flex items-center gap-2 text-white font-bold bg-white/10 hover:bg-white/20 px-6 py-3 rounded-xl transition-colors backdrop-blur-md">
+                            Üreticilerimizi Tanıyın
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Ultimate CTA -->
+    <section class="py-32 relative z-10 border-t border-white/5">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-brand-900/20 pointer-events-none"></div>
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-20">
+            <h2 class="text-5xl md:text-7xl font-sans font-black tracking-tighter mb-8">Hemen Deneyin.</h2>
+            <p class="text-2xl text-gray-400 mb-12 max-w-2xl mx-auto font-light">
+                Sağlıklı beslenmek artık bir lüks değil. Sepetinizi doldurun, farkı ilk lokmada hissedin.
+            </p>
+            <a href="https://organiktar-m.albakarda.workers.dev" target="_blank" class="inline-flex items-center justify-center px-12 py-5 font-black text-xl text-surface-900 bg-gradient-to-r from-brand-400 to-emerald-400 rounded-full hover:scale-105 hover:shadow-[0_0_50px_rgba(34,197,94,0.6)] transition-all duration-300 transform">
+                Platforma Git
+            </a>
+        </div>
+    </section>
+
+    <!-- Minimal Footer -->
+    <footer class="py-10 border-t border-white/10 relative z-10 glass-panel">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-gray-500 text-sm">
+            <div class="flex items-center gap-2">
+                <span class="font-serif text-lg text-white">ÇiftçidenKapına</span>
+                <span>&copy; 2026 Tüm Hakları Saklıdır.</span>
+            </div>
+            <div class="flex gap-6">
+                <a href="#" class="hover:text-white transition-colors">Instagram</a>
+                <a href="#" class="hover:text-white transition-colors">X (Twitter)</a>
+                <a href="#" class="hover:text-white transition-colors">İletişim</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
