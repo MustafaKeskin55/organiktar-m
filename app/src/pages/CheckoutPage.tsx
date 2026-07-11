@@ -58,14 +58,14 @@ export function CheckoutPage() {
   if (step === 3) {
     return (
       <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-4">
-        <div className="bg-white rounded-xl shadow-lg p-8 text-center max-w-md w-full">
-          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+        <div className="bg-white rounded-xl shadow-lg p-6 md:p-8 text-center max-w-md w-full">
+          <div className="w-12 h-12 md:w-16 md:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
             <svg className="w-8 h-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <h2 className="text-2xl font-bold mb-2">Siparişiniz Alındı!</h2>
-          <p className="text-gray-500 mb-6">Siparişiniz başarıyla oluşturuldu. En kısa sürede kargoya verilecektir.</p>
+          <h2 className="text-xl md:text-2xl font-bold mb-2">Siparişiniz Alındı!</h2>
+          <p className="text-sm md:text-base text-gray-500 mb-4 md:mb-6">Siparişiniz başarıyla oluşturuldu. En kısa sürede kargoya verilecektir.</p>
           <div className="space-y-2">
             <Link to="/orders">
               <Button className="w-full bg-green-600 hover:bg-green-700">Siparişlerimi Gör</Button>
@@ -82,15 +82,15 @@ export function CheckoutPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <header className="bg-white border-b">
-        <div className="max-w-3xl mx-auto px-4 h-16 flex items-center">
-          <Link to="/cart" className="flex items-center text-gray-600 hover:text-gray-900">
+        <div className="max-w-3xl mx-auto px-4 h-14 md:h-16 flex items-center">
+          <Link to="/cart" className="flex items-center text-sm md:text-base text-gray-600 hover:text-gray-900">
             <ArrowLeft className="w-5 h-5 mr-2" />
             Sepete Dön
           </Link>
         </div>
       </header>
 
-      <main className="max-w-3xl mx-auto px-4 py-8">
+      <main className="max-w-3xl mx-auto px-4 py-4 md:py-8">
         {/* Progress */}
         <div className="flex items-center justify-center mb-8">
           <div className={`w-8 h-8 rounded-full flex items-center justify-center ${step >= 1 ? 'bg-green-600 text-white' : 'bg-gray-200'}`}>1</div>
@@ -101,9 +101,9 @@ export function CheckoutPage() {
         </div>
 
         {step === 1 && (
-          <div className="bg-white rounded-lg p-6">
-            <h2 className="text-xl font-bold mb-4 flex items-center">
-              <Truck className="w-5 h-5 mr-2" />
+          <div className="bg-white rounded-lg p-4 md:p-6">
+            <h2 className="text-lg md:text-xl font-bold mb-4 flex items-center">
+              <Truck className="w-4 h-4 md:w-5 md:h-5 mr-2" />
               Teslimat Adresi
             </h2>
             <div className="space-y-4">
@@ -140,14 +140,14 @@ export function CheckoutPage() {
         )}
 
         {step === 2 && (
-          <div className="bg-white rounded-lg p-6">
-            <h2 className="text-xl font-bold mb-4 flex items-center">
-              <CreditCard className="w-5 h-5 mr-2" />
+          <div className="bg-white rounded-lg p-4 md:p-6">
+            <h2 className="text-lg md:text-xl font-bold mb-4 flex items-center">
+              <CreditCard className="w-4 h-4 md:w-5 md:h-5 mr-2" />
               Ödeme Yöntemi
             </h2>
             
-            <div className="space-y-3 mb-6">
-              <label className="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-gray-50">
+            <div className="space-y-2 md:space-y-3 mb-4 md:mb-6">
+              <label className="flex items-center p-3 md:p-4 border rounded-lg cursor-pointer hover:bg-gray-50">
                 <input
                   type="radio"
                   name="payment"
@@ -161,7 +161,7 @@ export function CheckoutPage() {
                   <p className="text-sm text-gray-500">Güvenli ödeme</p>
                 </div>
               </label>
-              <label className="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-gray-50">
+              <label className="flex items-center p-3 md:p-4 border rounded-lg cursor-pointer hover:bg-gray-50">
                 <input
                   type="radio"
                   name="payment"
@@ -175,7 +175,7 @@ export function CheckoutPage() {
                   <p className="text-sm text-gray-500">Banka transferi</p>
                 </div>
               </label>
-              <label className="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-gray-50">
+              <label className="flex items-center p-3 md:p-4 border rounded-lg cursor-pointer hover:bg-gray-50">
                 <input
                   type="radio"
                   name="payment"

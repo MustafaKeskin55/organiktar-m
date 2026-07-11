@@ -62,7 +62,7 @@ export function OrdersPage() {
         </div>
       </header>
 
-      <main className="max-w-4xl mx-auto px-4 py-8">
+      <main className="max-w-4xl mx-auto px-4 py-4 md:py-8">
         {loading ? (
           <div className="text-center py-12">Yükleniyor...</div>
         ) : orders.length === 0 ? (
@@ -81,7 +81,7 @@ export function OrdersPage() {
               const StatusIcon = status.icon;
               
               return (
-                <div key={order.id} className="bg-white rounded-lg p-6">
+                <div key={order.id} className="bg-white rounded-lg p-4 md:p-6">
                   <div className="flex items-start justify-between mb-4">
                     <div>
                       <p className="text-sm text-gray-500">Sipariş No</p>

@@ -22,36 +22,36 @@ export function ContactPage() {
       {/* Universal Header */}
       <Header />
 
-      <main className="max-w-4xl mx-auto px-4 py-12">
+      <main className="max-w-4xl mx-auto px-4 py-8 md:py-12">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">İletişim</h1>
-          <p className="text-lg text-gray-600">Bize ulaşın, size yardımcı olalım</p>
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2 md:mb-4">İletişim</h1>
+          <p className="text-base md:text-lg text-gray-600">Bize ulaşın, size yardımcı olalım</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12">
           {/* Contact Info */}
           <div className="space-y-6">
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                <Mail className="w-5 h-5 text-green-600" />
+            <div className="flex items-start gap-3 md:gap-4">
+              <div className="w-10 h-10 md:w-12 md:h-12 bg-green-100 rounded-full flex items-center justify-center shrink-0">
+                <Mail className="w-4 h-4 md:w-5 md:h-5 text-green-600" />
               </div>
               <div>
                 <h3 className="font-semibold">E-posta</h3>
                 <p className="text-gray-600">info@organiktarm.com</p>
               </div>
             </div>
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                <Phone className="w-5 h-5 text-green-600" />
+            <div className="flex items-start gap-3 md:gap-4">
+              <div className="w-10 h-10 md:w-12 md:h-12 bg-green-100 rounded-full flex items-center justify-center shrink-0">
+                <Phone className="w-4 h-4 md:w-5 md:h-5 text-green-600" />
               </div>
               <div>
                 <h3 className="font-semibold">Telefon</h3>
                 <p className="text-gray-600">+90 555 123 4567</p>
               </div>
             </div>
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                <MapPin className="w-5 h-5 text-green-600" />
+            <div className="flex items-start gap-3 md:gap-4">
+              <div className="w-10 h-10 md:w-12 md:h-12 bg-green-100 rounded-full flex items-center justify-center shrink-0">
+                <MapPin className="w-4 h-4 md:w-5 md:h-5 text-green-600" />
               </div>
               <div>
                 <h3 className="font-semibold">Adres</h3>
@@ -61,8 +61,8 @@ export function ContactPage() {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-gray-50 rounded-xl p-6">
-            <h2 className="text-xl font-semibold mb-4">Bize Yazın</h2>
+          <div className="bg-gray-50 rounded-xl p-4 md:p-6">
+            <h2 className="text-lg md:text-xl font-semibold mb-4">Bize Yazın</h2>
             {sent ? (
               <div className="bg-green-100 text-green-700 p-4 rounded-lg">
                 Mesajınız gönderildi! En kısa sürede dönüş yapacağız.

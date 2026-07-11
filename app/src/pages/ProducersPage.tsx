@@ -109,9 +109,9 @@ export function ProducersPage() {
       <main className="flex-1 w-full pb-16">
         
         {/* Page Hero Banner Section */}
-        <section className="bg-gradient-to-br from-green-50 via-emerald-50/30 to-white border-b border-green-100 py-12 md:py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-            <h1 className="text-3xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
+        <section className="bg-gradient-to-br from-green-50 via-emerald-50/30 to-white border-b border-green-100 py-6 md:py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3 md:space-y-4">
+            <h1 className="text-2xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
               Toprağa Can Veren <span className="text-green-700">Üreticilerimiz</span>
             </h1>
             <p className="text-sm md:text-lg text-gray-600 max-w-2xl mx-auto">
@@ -124,7 +124,7 @@ export function ProducersPage() {
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
           
           {/* Search and Filters Bar */}
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 md:p-6 mb-8 flex flex-col md:flex-row gap-4 items-center justify-between">
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-3 md:p-6 mb-4 md:mb-8 flex flex-col md:flex-row gap-3 md:gap-4 items-center justify-between">
             {/* Search Input */}
             <div className="relative w-full md:w-96">
               <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
@@ -191,7 +191,7 @@ export function ProducersPage() {
             </div>
           ) : (
             /* Cards Grid */
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
               {filteredProducers.map((producer) => (
                 <Link key={producer.id} to={`/producer/${producer.id}`} className="group">
                   <div className="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-green-200 transition-all duration-300 overflow-hidden flex flex-col h-full justify-between">
@@ -229,7 +229,7 @@ export function ProducersPage() {
                     </div>
 
                     {/* Card Content */}
-                    <div className="p-6 pt-10 flex-1 flex flex-col justify-between space-y-4">
+                    <div className="p-4 pt-8 md:p-6 md:pt-10 flex-1 flex flex-col justify-between space-y-3 md:space-y-4">
                       <div className="space-y-2">
                         {/* Name and Rating */}
                         <div className="flex items-start justify-between">
@@ -269,7 +269,7 @@ export function ProducersPage() {
                     </div>
                     
                     {/* Card Footer Toolbar */}
-                    <div className="px-6 py-4 bg-gray-50 border-t border-gray-100 flex items-center justify-between">
+                    <div className="px-4 py-3 md:px-6 md:py-4 bg-gray-50 border-t border-gray-100 flex items-center justify-between">
                       <span className="text-xs font-semibold text-gray-500 flex items-center">
                         <Store className="w-3.5 h-3.5 mr-1 text-green-600" /> {(producer as any).productsCount || 5} Aktif Ürün
                       </span>

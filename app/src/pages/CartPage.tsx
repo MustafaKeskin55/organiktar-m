@@ -23,12 +23,12 @@ export function CartPage() {
           </Link>
         </div>
       ) : (
-        <main className="max-w-3xl mx-auto px-4 py-8 flex-1 w-full">
-          <h1 className="text-2xl font-extrabold text-gray-900 mb-6">Sepetim ({items.length} ürün)</h1>
+        <main className="max-w-3xl mx-auto px-4 py-4 md:py-8 flex-1 w-full">
+          <h1 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-4 md:mb-6">Sepetim ({items.length} ürün)</h1>
 
           <div className="space-y-4">
             {items.map((item) => (
-              <div key={item.product.id} className="bg-white rounded-xl p-4 flex flex-col sm:flex-row items-center gap-4 border shadow-sm">
+              <div key={item.product.id} className="bg-white rounded-xl p-3 md:p-4 flex flex-col sm:flex-row items-center gap-3 md:gap-4 border shadow-sm">
                 <img
                   src={item.product.images?.[0] ? 
                     (item.product.images[0].startsWith('http') ? item.product.images[0] : `/uploads/${item.product.images[0]}`)
@@ -70,13 +70,13 @@ export function CartPage() {
           </div>
 
           {/* Summary */}
-          <div className="bg-white rounded-xl border p-6 mt-6 shadow-sm">
-            <div className="flex justify-between items-center text-lg font-bold mb-6">
+          <div className="bg-white rounded-xl border p-4 md:p-6 mt-4 md:mt-6 shadow-sm">
+            <div className="flex justify-between items-center text-base md:text-lg font-bold mb-4 md:mb-6">
               <span className="text-gray-700">Toplam Sepet Tutarı</span>
               <span className="text-2xl text-green-700">₺{getTotalPrice().toFixed(2)}</span>
             </div>
             <Link to="/checkout">
-              <Button className="w-full bg-green-600 hover:bg-green-700 py-6 text-lg font-semibold rounded-xl">
+              <Button className="w-full bg-green-600 hover:bg-green-700 py-4 md:py-6 text-base md:text-lg font-semibold rounded-xl">
                 Siparişi Tamamla
               </Button>
             </Link>

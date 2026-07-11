@@ -123,17 +123,17 @@ export function SubscriptionPage() {
       <Header />
       <main className="flex-1">
         {/* Hero */}
-        <section className="bg-gradient-to-br from-green-50 via-white to-orange-50 py-16 lg:py-24">
+        <section className="bg-gradient-to-br from-green-50 via-white to-orange-50 py-12 lg:py-24">
           <div className="container mx-auto px-4">
             <div className="mx-auto max-w-3xl text-center">
               <Badge className="mb-4 bg-green-100 text-green-800">
                 <Calendar className="mr-1 h-3 w-3" />
                 Haftalık Abonelik
               </Badge>
-              <h1 className="mb-6 text-4xl font-bold text-gray-900 lg:text-5xl">
+              <h1 className="mb-4 md:mb-6 text-3xl font-bold text-gray-900 lg:text-5xl">
                 Taze Ürünler Kapınıza Gelsin
               </h1>
-              <p className="mb-8 text-lg text-gray-600">
+              <p className="mb-6 md:mb-8 text-sm md:text-lg text-gray-600">
                 Her hafta seçtiğiniz gün, yerel üreticilerden taze sebze ve meyveler
                 doğrudan kapınıza teslim edilsin. Abone olun, %20'ye varan indirim kazanın.
               </p>
@@ -155,10 +155,10 @@ export function SubscriptionPage() {
         </section>
 
         {/* How It Works */}
-        <section className="bg-white py-16 lg:py-24">
+        <section className="bg-white py-12 lg:py-24">
           <div className="container mx-auto px-4">
             <div className="mb-12 text-center">
-              <h2 className="mb-4 text-3xl font-bold text-gray-900">
+              <h2 className="mb-2 md:mb-4 text-2xl md:text-3xl font-bold text-gray-900">
                 Nasıl Çalışır?
               </h2>
               <p className="text-gray-600">
@@ -181,10 +181,10 @@ export function SubscriptionPage() {
         </section>
 
         {/* Plans */}
-        <section id="plans" className="bg-gray-50 py-16 lg:py-24">
+        <section id="plans" className="bg-gray-50 py-12 lg:py-24">
           <div className="container mx-auto px-4">
             <div className="mb-12 text-center">
-              <h2 className="mb-4 text-3xl font-bold text-gray-900">
+              <h2 className="mb-2 md:mb-4 text-2xl md:text-3xl font-bold text-gray-900">
                 Abonelik Planları
               </h2>
               <p className="text-gray-600">
@@ -247,7 +247,7 @@ export function SubscriptionPage() {
             </div>
 
             {/* Benefits */}
-            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-8 md:mt-12 grid gap-4 md:gap-6 sm:grid-cols-2 lg:grid-cols-4">
               <div className="flex items-center gap-4 rounded-xl bg-white p-4 shadow-sm">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-green-100">
                   <Leaf className="h-6 w-6 text-green-600" />
@@ -289,10 +289,10 @@ export function SubscriptionPage() {
         </section>
 
         {/* Testimonials */}
-        <section className="bg-white py-16 lg:py-24">
+        <section className="bg-white py-12 lg:py-24">
           <div className="container mx-auto px-4">
             <div className="mb-12 text-center">
-              <h2 className="mb-4 text-3xl font-bold text-gray-900">
+              <h2 className="mb-2 md:mb-4 text-2xl md:text-3xl font-bold text-gray-900">
                 Abonelerimiz Ne Diyor?
               </h2>
               <p className="text-gray-600">
@@ -323,13 +323,13 @@ export function SubscriptionPage() {
         </section>
 
         {/* CTA */}
-        <section className="bg-gradient-to-br from-green-600 to-green-700 py-16">
+        <section className="bg-gradient-to-br from-green-600 to-green-700 py-12 md:py-16">
           <div className="container mx-auto px-4">
             <div className="mx-auto max-w-3xl text-center">
-              <h2 className="mb-4 text-3xl font-bold text-white">
+              <h2 className="mb-4 text-2xl md:text-3xl font-bold text-white">
                 Hemen Abone Olun, İlk Hafta %50 İndirimli!
               </h2>
-              <p className="mb-8 text-lg text-green-100">
+              <p className="mb-6 md:mb-8 text-sm md:text-lg text-green-100">
                 İlk aboneliğinizde geçerli, sınırlı süreli kampanya.
                 Taze ürüklere hemen başlayın.
               </p>

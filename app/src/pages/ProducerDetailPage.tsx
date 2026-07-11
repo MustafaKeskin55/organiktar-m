@@ -163,7 +163,7 @@ export function ProducerDetailPage() {
       </header>
 
       {/* Hero Cover Banner */}
-      <div className="relative h-64 md:h-80 w-full overflow-hidden">
+      <div className="relative h-40 md:h-80 w-full overflow-hidden">
         <img 
           src={producer.coverImage} 
           alt="Çiftlik Görünümü" 
@@ -173,15 +173,15 @@ export function ProducerDetailPage() {
       </div>
 
       {/* Profile Card Container (Overlapping Banner) */}
-      <div className="max-w-7xl mx-auto px-4 -mt-24 md:-mt-32 relative z-20 mb-8">
-        <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 md:p-8">
+      <div className="max-w-7xl mx-auto px-4 -mt-16 md:-mt-32 relative z-20 mb-6 md:mb-8">
+        <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-4 md:p-8">
           <div className="flex flex-col md:flex-row gap-6 items-start md:items-center">
             {/* Avatar */}
             <div className="relative">
               <img
                 src={producer.image || '/placeholder-avatar.png'}
                 alt={producer.name}
-                className="w-32 h-32 md:w-36 md:h-36 rounded-2xl object-cover border-4 border-white shadow-md bg-gray-50"
+                className="w-24 h-24 md:w-36 md:h-36 rounded-2xl object-cover border-4 border-white shadow-md bg-gray-50"
                 onError={(e) => {
                   (e.target as HTMLImageElement).src = '/placeholder-avatar.png';
                 }}
@@ -190,8 +190,8 @@ export function ProducerDetailPage() {
 
             {/* Profile Info */}
             <div className="flex-1 space-y-3">
-              <div className="flex flex-wrap items-center gap-2.5">
-                <h1 className="text-2xl md:text-3xl font-extrabold text-gray-900 tracking-tight">{producer.name}</h1>
+              <div className="flex flex-wrap items-center gap-2 md:gap-2.5">
+                <h1 className="text-xl md:text-3xl font-extrabold text-gray-900 tracking-tight">{producer.name}</h1>
                 {producer.isVerified && (
                   <Badge className="bg-green-600 hover:bg-green-600 text-white shadow-sm px-2.5 py-0.5 rounded-md">Doğrulanmış</Badge>
                 )}
@@ -212,7 +212,7 @@ export function ProducerDetailPage() {
             <div className="w-full md:w-auto flex flex-col sm:flex-row md:flex-col gap-3 min-w-[200px]">
               <Button 
                 onClick={handleAskQuestion} 
-                className="w-full bg-green-600 hover:bg-green-700 text-white flex items-center justify-center py-5 rounded-xl font-semibold shadow-md shadow-green-100 transition-all"
+                className="w-full bg-green-600 hover:bg-green-700 text-white flex items-center justify-center py-3 md:py-5 rounded-xl font-semibold shadow-md shadow-green-100 transition-all text-sm md:text-base"
               >
                 <MessageSquare className="w-4 h-4 mr-2" /> Üreticiye Soru Sor
               </Button>
@@ -251,7 +251,7 @@ export function ProducerDetailPage() {
           <div className="lg:col-span-2 space-y-6">
             
             {/* Tabs Header */}
-            <div className="bg-white rounded-xl border border-gray-100 p-2 flex gap-2 overflow-x-auto whitespace-nowrap hide-scrollbar">
+            <div className="bg-white rounded-xl border border-gray-100 p-1 md:p-2 flex gap-1 md:gap-2 overflow-x-auto whitespace-nowrap hide-scrollbar">
               <button 
                 onClick={() => setActiveTab('products')}
                 className={`flex-1 py-3 px-4 rounded-lg text-sm font-semibold transition-all duration-200 ${
@@ -298,7 +298,7 @@ export function ProducerDetailPage() {
                     <p className="text-sm text-gray-500 max-w-xs mx-auto">Bu üretici henüz satışta olan bir ürün eklememiş. En kısa sürede güncellenecektir.</p>
                   </div>
                 ) : (
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-2 sm:grid-cols-2 gap-3 md:gap-6">
                     {products.map((product) => (
                       <ProductCard key={product.id} product={product} />
                     ))}
@@ -309,7 +309,7 @@ export function ProducerDetailPage() {
 
             {/* Tab: Story */}
             {activeTab === 'story' && (
-              <div className="bg-white rounded-2xl border border-gray-100 p-6 md:p-8 space-y-8">
+              <div className="bg-white rounded-2xl border border-gray-100 p-4 md:p-8 space-y-6 md:space-y-8">
                 <div className="space-y-4">
                   <h3 className="text-xl font-bold text-gray-900 flex items-center">
                     <Award className="w-5 h-5 mr-2 text-green-600" /> Çiftlik Hikayemiz & Felsefemiz
@@ -344,7 +344,7 @@ export function ProducerDetailPage() {
 
             {/* Tab: Reviews */}
             {activeTab === 'reviews' && (
-              <div className="bg-white rounded-2xl border border-gray-100 p-6 md:p-8 space-y-8">
+              <div className="bg-white rounded-2xl border border-gray-100 p-4 md:p-8 space-y-6 md:space-y-8">
                 {/* Review Header Stats */}
                 <div className="flex flex-col sm:flex-row gap-6 items-center bg-gray-50 rounded-xl p-6 border border-gray-100">
                   <div className="text-center sm:border-r border-gray-200 sm:pr-8">
@@ -394,7 +394,7 @@ export function ProducerDetailPage() {
           <div className="space-y-6">
             
             {/* Farming Specialties */}
-            <div className="bg-white rounded-2xl border border-gray-100 p-6 space-y-4">
+            <div className="bg-white rounded-2xl border border-gray-100 p-4 md:p-6 space-y-4">
               <h3 className="font-bold text-gray-900 text-base flex items-center border-b pb-3">
                 <ShieldCheck className="w-5 h-5 mr-2 text-green-600" /> Çiftlik Özellikleri
               </h3>
@@ -411,7 +411,7 @@ export function ProducerDetailPage() {
             </div>
 
             {/* Contact & Map Info */}
-            <div className="bg-white rounded-2xl border border-gray-100 p-6 space-y-5">
+            <div className="bg-white rounded-2xl border border-gray-100 p-4 md:p-6 space-y-5">
               <h3 className="font-bold text-gray-900 text-base flex items-center border-b pb-3">
                 <MapPin className="w-5 h-5 mr-2 text-green-600" /> İletişim & Lokasyon
               </h3>

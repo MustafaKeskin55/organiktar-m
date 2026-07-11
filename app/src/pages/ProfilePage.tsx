@@ -34,8 +34,8 @@ export function ProfilePage() {
         </div>
       </header>
 
-      <main className="max-w-4xl mx-auto px-4 py-8">
-        <div className="grid md:grid-cols-4 gap-6">
+      <main className="max-w-4xl mx-auto px-4 py-4 md:py-8">
+        <div className="grid md:grid-cols-4 gap-4 md:gap-6">
           {/* Sidebar */}
           <div className="space-y-2">
             <button
@@ -69,12 +69,12 @@ export function ProfilePage() {
           {/* Content */}
           <div className="md:col-span-3">
             {activeTab === 'profile' && (
-              <div className="bg-white rounded-lg p-6">
-                <h2 className="text-xl font-bold mb-6">Kişisel Bilgiler</h2>
+              <div className="bg-white rounded-lg p-4 md:p-6">
+                <h2 className="text-lg md:text-xl font-bold mb-4 md:mb-6">Kişisel Bilgiler</h2>
                 <div className="space-y-4">
-                  <div className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg">
-                    <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
-                      <span className="text-2xl font-bold text-green-700">{user.name?.charAt(0)}</span>
+                  <div className="flex items-center gap-3 md:gap-4 p-3 md:p-4 bg-gray-50 rounded-lg">
+                    <div className="w-12 h-12 md:w-16 md:h-16 bg-green-100 rounded-full flex items-center justify-center">
+                      <span className="text-xl md:text-2xl font-bold text-green-700">{user.name?.charAt(0)}</span>
                     </div>
                     <div>
                       <p className="font-semibold">{user.name}</p>
@@ -104,9 +104,9 @@ export function ProfilePage() {
             )}
 
             {activeTab === 'addresses' && (
-              <div className="bg-white rounded-lg p-6">
-                <div className="flex justify-between items-center mb-6">
-                  <h2 className="text-xl font-bold">Kayıtlı Adreslerim</h2>
+              <div className="bg-white rounded-lg p-4 md:p-6">
+                <div className="flex justify-between items-center mb-4 md:mb-6">
+                  <h2 className="text-lg md:text-xl font-bold">Kayıtlı Adreslerim</h2>
                   <Button size="sm">Yeni Adres Ekle</Button>
                 </div>
                 {user.addresses?.length === 0 ? (

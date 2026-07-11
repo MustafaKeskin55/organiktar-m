@@ -67,7 +67,7 @@ export function ForgotPasswordPage() {
       </div>
 
       {/* Right Side - Form */}
-      <div className="flex w-full flex-col justify-center px-4 py-12 lg:w-1/2 lg:px-12">
+      <div className="flex w-full flex-col justify-center px-4 py-8 md:py-12 lg:w-1/2 lg:px-12">
         <div className="mx-auto w-full max-w-md">
           {/* Back Button */}
           <button
@@ -88,10 +88,10 @@ export function ForgotPasswordPage() {
 
           {isSuccess ? (
             <div className="text-center">
-              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-100">
-                <CheckCircle2 className="h-8 w-8 text-green-600" />
+              <div className="mx-auto mb-4 flex h-12 w-12 md:h-16 md:w-16 items-center justify-center rounded-full bg-green-100">
+                <CheckCircle2 className="h-6 w-6 md:h-8 md:w-8 text-green-600" />
               </div>
-              <h1 className="text-2xl font-bold text-gray-900 mb-4">
+              <h1 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">
                 E-posta Gönderildi!
               </h1>
               <p className="text-gray-600 mb-6">
@@ -118,9 +118,9 @@ export function ForgotPasswordPage() {
             </div>
           ) : (
             <>
-              <div className="mb-8">
-                <h1 className="text-3xl font-bold text-gray-900">Şifremi Unuttum</h1>
-                <p className="mt-2 text-gray-600">
+              <div className="mb-6 md:mb-8">
+                <h1 className="text-2xl md:text-3xl font-bold text-gray-900">Şifremi Unuttum</h1>
+                <p className="mt-2 text-sm md:text-base text-gray-600">
                   E-posta adresinizi girin, size geçici bir şifre gönderelim.
                 </p>
               </div>

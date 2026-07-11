@@ -43,18 +43,20 @@ export function RegisterPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
-      <div className="p-4">
+    <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-6 md:py-12 px-4 sm:px-6 lg:px-8">
+      <div className="absolute top-4 left-4">
         <Link to="/" className="text-gray-600 hover:text-gray-900 flex items-center">
           <ArrowLeft className="w-4 h-4 mr-1" />
           Ana Sayfa
         </Link>
       </div>
 
-      <div className="flex-1 flex items-center justify-center p-4">
-        <div className="bg-white rounded-xl shadow-lg p-8 w-full max-w-md">
-          <div className="text-center mb-8">
-            <h1 className="text-2xl font-bold text-green-700">Organik Tarım</h1>
+      <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+        <div className="bg-white py-6 px-4 md:py-8 shadow sm:rounded-xl md:px-10 border border-gray-100">
+          
+          {/* Header */}
+          <div className="text-center mb-6">
+            <h1 className="text-xl md:text-2xl font-bold text-green-700">Organik Tarım</h1>
             <p className="text-gray-500 mt-2">Yeni hesap oluşturun</p>
           </div>
 

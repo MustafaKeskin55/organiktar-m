@@ -62,7 +62,7 @@ export function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-6 md:py-12 px-4 sm:px-6 lg:px-8">
       {/* Back Button */}
       <div className="absolute top-4 left-4">
         <Link to="/" className="text-gray-600 hover:text-gray-900 flex items-center font-medium text-sm">
@@ -72,11 +72,11 @@ export function LoginPage() {
       </div>
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-        <div className="bg-white py-8 px-4 shadow sm:rounded-xl sm:px-10 border border-gray-100">
+        <div className="bg-white py-6 px-4 md:py-8 shadow sm:rounded-xl md:px-10 border border-gray-100">
           
           {/* Header */}
           <div className="text-center mb-6">
-            <h1 className="text-2xl font-bold text-green-700">Organik Tarım</h1>
+            <h1 className="text-xl md:text-2xl font-bold text-green-700">Organik Tarım</h1>
             <p className="text-sm text-gray-500 mt-1">
               {showManualForm ? 'Hesabınıza giriş yapın' : 'Hızlı Giriş Seçenekleri'}
             </p>
@@ -94,7 +94,7 @@ export function LoginPage() {
               <button
                 type="button"
                 onClick={() => handleQuickLogin('superadmin@example.com')}
-                className="w-full flex items-center justify-between p-4 bg-purple-50 hover:bg-purple-100/80 border border-purple-200 rounded-xl transition-all duration-200 text-left group"
+                className="w-full flex items-center justify-between p-3 md:p-4 bg-purple-50 hover:bg-purple-100/80 border border-purple-200 rounded-xl transition-all duration-200 text-left group"
               >
                 <div>
                   <span className="font-bold text-sm text-purple-700 block">Süper Admin Girişi</span>
@@ -106,7 +106,7 @@ export function LoginPage() {
               <button
                 type="button"
                 onClick={() => handleQuickLogin('producer@example.com')}
-                className="w-full flex items-center justify-between p-4 bg-green-50 hover:bg-green-100/80 border border-green-200 rounded-xl transition-all duration-200 text-left group"
+                className="w-full flex items-center justify-between p-3 md:p-4 bg-green-50 hover:bg-green-100/80 border border-green-200 rounded-xl transition-all duration-200 text-left group"
               >
                 <div>
                   <span className="font-bold text-sm text-green-700 block">Üretici / Çiftçi Girişi</span>
@@ -118,7 +118,7 @@ export function LoginPage() {
               <button
                 type="button"
                 onClick={() => handleQuickLogin('consumer@example.com')}
-                className="w-full flex items-center justify-between p-4 bg-blue-50 hover:bg-blue-100/80 border border-blue-200 rounded-xl transition-all duration-200 text-left group"
+                className="w-full flex items-center justify-between p-3 md:p-4 bg-blue-50 hover:bg-blue-100/80 border border-blue-200 rounded-xl transition-all duration-200 text-left group"
               >
                 <div>
                   <span className="font-bold text-sm text-blue-700 block">Tüketici / Müşteri Girişi</span>
@@ -130,7 +130,7 @@ export function LoginPage() {
               <button
                 type="button"
                 onClick={() => handleQuickLogin('manager@example.com')}
-                className="w-full flex items-center justify-between p-4 bg-amber-50 hover:bg-amber-100/80 border border-amber-200 rounded-xl transition-all duration-200 text-left group"
+                className="w-full flex items-center justify-between p-3 md:p-4 bg-amber-50 hover:bg-amber-100/80 border border-amber-200 rounded-xl transition-all duration-200 text-left group"
               >
                 <div>
                   <span className="font-bold text-sm text-amber-700 block">Sistem Müdürü Girişi</span>
@@ -142,7 +142,7 @@ export function LoginPage() {
               <button
                 type="button"
                 onClick={() => handleQuickLogin('finance@example.com')}
-                className="w-full flex items-center justify-between p-4 bg-rose-50 hover:bg-rose-100/80 border border-rose-200 rounded-xl transition-all duration-200 text-left group"
+                className="w-full flex items-center justify-between p-3 md:p-4 bg-rose-50 hover:bg-rose-100/80 border border-rose-200 rounded-xl transition-all duration-200 text-left group"
               >
                 <div>
                   <span className="font-bold text-sm text-rose-700 block">Finans Yöneticisi Girişi</span>

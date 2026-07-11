@@ -71,20 +71,20 @@ export function AboutPage() {
       <main className="flex-1 w-full pb-16">
         
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-green-900 to-emerald-950 py-24 text-white text-center overflow-hidden">
+        <section className="relative bg-gradient-to-br from-green-900 to-emerald-950 py-12 md:py-24 text-white text-center overflow-hidden">
           <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]" />
           <div className="max-w-4xl mx-auto px-4 space-y-6 relative z-10">
             <Badge className="bg-green-500/20 text-green-300 border border-green-500/30 hover:bg-green-500/20 px-3.5 py-1 text-xs rounded-full">Hikayemiz</Badge>
-            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">Doğal Yaşam, <span className="text-green-400">Sağlıklı Gelecek</span></h1>
-            <p className="text-base md:text-xl text-green-100/80 max-w-2xl mx-auto font-medium leading-relaxed">
+            <h1 className="text-3xl md:text-6xl font-extrabold tracking-tight">Doğal Yaşam, <span className="text-green-400">Sağlıklı Gelecek</span></h1>
+            <p className="text-sm md:text-xl text-green-100/80 max-w-2xl mx-auto font-medium leading-relaxed">
               ÇiftçidenKapına olarak, yerel üreticilerin el emeğini koruyor ve en doğal besinleri hiçbir aracı olmadan doğrudan mutfağınıza taşıyoruz.
             </p>
           </div>
         </section>
 
         {/* Stats Grid Bar */}
-        <section className="max-w-6xl mx-auto px-4 -mt-10 relative z-20">
-          <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 md:p-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <section className="max-w-6xl mx-auto px-4 -mt-8 md:-mt-10 relative z-20">
+          <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-4 md:p-8 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 text-center">
             {stats.map((stat, idx) => (
               <div key={idx} className="space-y-1">
                 <span className="block text-2xl md:text-3.5xl font-extrabold text-green-700 tracking-tight">{stat.value}</span>
@@ -95,9 +95,9 @@ export function AboutPage() {
         </section>
 
         {/* Brand Mission & Vision */}
-        <section className="max-w-6xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
-            <h2 className="text-3xl font-bold text-gray-900 tracking-tight">Toprağın Gücü ve Emeğin Hikayesi</h2>
+        <section className="max-w-6xl mx-auto px-4 py-8 md:py-16 grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div className="space-y-4 md:space-y-6">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight">Toprağın Gücü ve Emeğin Hikayesi</h2>
             <div className="text-gray-600 leading-relaxed space-y-4 text-sm md:text-base">
               <p>
                 Gelişen teknoloji ve endüstriyel tarım modelleri, ne yazık ki yediğimiz besinlerin doğallığını kaybetmesine ve küçük çiftçilerimizin pazar payını yitirmesine sebep oldu.
@@ -124,10 +124,10 @@ export function AboutPage() {
         </section>
 
         {/* Core Values Section */}
-        <section className="bg-green-50/50 border-y border-green-100/50 py-16">
+        <section className="bg-green-50/50 border-y border-green-100/50 py-8 md:py-16">
           <div className="max-w-6xl mx-auto px-4">
-            <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
-              <h2 className="text-3xl font-bold text-gray-900 tracking-tight">Temel Değerlerimiz</h2>
+            <div className="text-center max-w-2xl mx-auto mb-8 md:mb-12 space-y-2 md:space-y-3">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight">Temel Değerlerimiz</h2>
               <p className="text-sm text-gray-500">Bizleri yönlendiren, toprağa ve üreticiye olan bağlılığımızı gösteren prensiplerimiz.</p>
             </div>
             
@@ -146,9 +146,9 @@ export function AboutPage() {
         </section>
 
         {/* Timeline / Milestones */}
-        <section className="max-w-5xl mx-auto px-4 py-16">
-          <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
-            <h2 className="text-3xl font-bold text-gray-900 tracking-tight">Yolculuğumuz</h2>
+        <section className="max-w-5xl mx-auto px-4 py-8 md:py-16">
+          <div className="text-center max-w-2xl mx-auto mb-8 md:mb-16 space-y-2 md:space-y-3">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight">Yolculuğumuz</h2>
             <p className="text-sm text-gray-500">Küçük bir çiftlik kooperatifi hayalinden bugünkü teknoloji platformuna uzanan hikayemiz.</p>
           </div>
 
