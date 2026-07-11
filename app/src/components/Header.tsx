@@ -54,7 +54,7 @@ export function Header() {
             <img 
               src={webLogo} 
               alt="ÇiftçidenKapına" 
-              className="h-12 md:h-16 w-auto object-contain scale-125 md:scale-[1.35] origin-left"
+              className="h-12 md:h-16 w-auto object-contain scale-[1.7] md:scale-[2.0] origin-left"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
                 target.style.display = 'none';
@@ -223,7 +223,7 @@ export function Header() {
                     <img 
                       src={webLogo} 
                       alt="ÇiftçidenKapına" 
-                      className="h-12 w-auto object-contain scale-110"
+                      className="h-12 w-auto object-contain scale-150"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
                         target.style.display = 'none';

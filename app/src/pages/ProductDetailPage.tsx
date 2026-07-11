@@ -270,21 +270,21 @@ export function ProductDetailPage() {
           <div className="p-4 sm:p-6 md:p-8 leading-relaxed">
             {activeTab === 'info' && (
               <div className="space-y-6">
-                <div className="grid sm:grid-cols-3 gap-6 text-center">
-                  <div className="p-4 rounded-xl bg-green-50/40 border border-green-100 flex flex-col items-center">
-                    <ShieldCheck className="w-8 h-8 text-green-600 mb-2" />
-                    <h4 className="font-bold text-gray-900 text-sm">GDO ve Katkısız</h4>
-                    <p className="text-xs text-gray-500 mt-1">Tamamen doğal tohumlardan, hormonsuz üretim.</p>
+                <div className="grid grid-cols-3 gap-2 sm:gap-6 text-center">
+                  <div className="p-2 sm:p-4 rounded-xl bg-green-50/40 border border-green-100 flex flex-col items-center justify-start">
+                    <ShieldCheck className="w-6 h-6 sm:w-8 sm:h-8 text-green-600 mb-1 sm:mb-2" />
+                    <h4 className="font-bold text-gray-900 text-[10px] sm:text-sm leading-tight">GDO ve Katkısız</h4>
+                    <p className="text-[9px] sm:text-xs text-gray-500 mt-1 leading-tight line-clamp-3 sm:line-clamp-none">Tamamen doğal tohumlardan, hormonsuz üretim.</p>
                   </div>
-                  <div className="p-4 rounded-xl bg-blue-50/40 border border-blue-100 flex flex-col items-center">
-                    <Truck className="w-8 h-8 text-blue-600 mb-2" />
-                    <h4 className="font-bold text-gray-900 text-sm">Aynı Gün Hasat & Kargo</h4>
-                    <p className="text-xs text-gray-500 mt-1">Sabah erken saatlerde toplanıp gün içerisinde gönderilir.</p>
+                  <div className="p-2 sm:p-4 rounded-xl bg-blue-50/40 border border-blue-100 flex flex-col items-center justify-start">
+                    <Truck className="w-6 h-6 sm:w-8 sm:h-8 text-blue-600 mb-1 sm:mb-2" />
+                    <h4 className="font-bold text-gray-900 text-[10px] sm:text-sm leading-tight">Aynı Gün Hasat & Kargo</h4>
+                    <p className="text-[9px] sm:text-xs text-gray-500 mt-1 leading-tight line-clamp-3 sm:line-clamp-none">Sabah erken saatlerde toplanıp gün içerisinde gönderilir.</p>
                   </div>
-                  <div className="p-4 rounded-xl bg-orange-50/40 border border-orange-100 flex flex-col items-center">
-                    <RefreshCw className="w-8 h-8 text-orange-600 mb-2" />
-                    <h4 className="font-bold text-gray-900 text-sm">Tazelik Garantisi</h4>
-                    <p className="text-xs text-gray-500 mt-1">Hasarlı veya beğenmediğiniz ürünlerde koşulsuz iade.</p>
+                  <div className="p-2 sm:p-4 rounded-xl bg-orange-50/40 border border-orange-100 flex flex-col items-center justify-start">
+                    <RefreshCw className="w-6 h-6 sm:w-8 sm:h-8 text-orange-600 mb-1 sm:mb-2" />
+                    <h4 className="font-bold text-gray-900 text-[10px] sm:text-sm leading-tight">Tazelik Garantisi</h4>
+                    <p className="text-[9px] sm:text-xs text-gray-500 mt-1 leading-tight line-clamp-3 sm:line-clamp-none">Hasarlı veya beğenmediğiniz ürünlerde koşulsuz iade.</p>
                   </div>
                 </div>
                 <div className="space-y-3 pt-4">
