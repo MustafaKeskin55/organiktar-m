@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Leaf, Instagram, Facebook, Twitter, Mail, Phone, MapPin } from 'lucide-react';
+import webLogo from '@/logo/web-logo.png';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -32,7 +33,7 @@ export function Footer() {
           <div className="space-y-4">
             <Link to="/" className="inline-block">
               <img 
-                src="/src/logo/web-logo.png" 
+                src={webLogo} 
                 alt="ÇiftçidenKapına" 
                 className="h-32 w-auto object-contain"
                 onError={(e) => {

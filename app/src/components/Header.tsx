@@ -17,6 +17,7 @@ import { useCartStore } from '@/store/cartStore';
 import { useAppStore } from '@/store/appStore';
 import { isAdmin, getRoleLabel } from '@/lib/roles';
 import { RoleSwitcher } from './RoleSwitcher';
+import webLogo from '@/logo/web-logo.png';
 
 export function Header() {
   const navigate = useNavigate();
@@ -51,7 +52,7 @@ export function Header() {
           {/* Web Logo - Navbar */}
           <Link to="/" className="flex items-center">
             <img 
-              src="/src/logo/web-logo.png" 
+              src={webLogo} 
               alt="ÇiftçidenKapına" 
               className="h-24 w-auto object-contain"
               onError={(e) => {
@@ -220,7 +221,7 @@ export function Header() {
                   {/* Mobile Logo */}
                   <div className="flex items-center justify-center border-b pb-4">
                     <img 
-                      src="/src/logo/web-logo.png" 
+                      src={webLogo} 
                       alt="ÇiftçidenKapına" 
                       className="h-20 w-auto object-contain"
                       onError={(e) => {
