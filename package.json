@@ -6,6 +6,10 @@
     "dev": "npm --prefix app run dev",
     "build": "npm --prefix app install && npm --prefix app run build",
     "lint": "npm --prefix app run lint",
-    "preview": "npm --prefix app run preview"
+    "preview": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.110.0"
   }
 }
