@@ -108,6 +108,7 @@ export function FinanceDashboard() {
   const { user, logout, isTokenValid, isInitialized } = useAuthStore();
 
   const [activeTab, setActiveTab] = useState('overview');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [stats, setStats] = useState<FinanceStats>({
     totalRevenue: 0, totalCommission: 0, netRevenue: 0,
     pendingPayments: 0, todayRevenue: 0, weeklyRevenue: 0,
