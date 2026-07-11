@@ -54,7 +54,7 @@ export function Header() {
             <img 
               src={webLogo} 
               alt="ÇiftçidenKapına" 
-              className="h-8 md:h-14 w-auto object-contain"
+              className="h-12 md:h-16 w-auto object-contain"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
                 target.style.display = 'none';

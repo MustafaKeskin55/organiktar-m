@@ -27,7 +27,7 @@ export function Footer() {
 
   return (
     <footer className="border-t bg-gray-50">
-      <div className="container mx-auto px-4 md:px-8 lg:px-20 py-12 md:py-20">
+      <div className="container mx-auto px-4 md:px-8 lg:px-20 py-8 md:py-16">
         <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div className="space-y-4">
@@ -35,7 +35,7 @@ export function Footer() {
               <img 
                 src={webLogo} 
                 alt="ÇiftçidenKapına" 
-                className="h-32 w-auto object-contain"
+                className="h-16 md:h-24 w-auto object-contain"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
                   target.style.display = 'none';
@@ -151,7 +151,7 @@ export function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="mt-12 border-t pt-8">
+        <div className="mt-6 md:mt-12 border-t pt-4 md:pt-8">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             <p className="text-sm text-gray-500">
               {currentYear} ÇiftçidenKapına. Tüm hakları saklıdır.
