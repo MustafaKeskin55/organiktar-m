@@ -3,8 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import { 
   LayoutDashboard, ShoppingBag, Package, Users, DollarSign, 
   Settings, LogOut, Search, Plus, Edit2, Trash2, 
-  CheckCircle, XCircle, Image as ImageIcon, Upload
+  CheckCircle, XCircle, Image as ImageIcon, Upload, Menu
 } from 'lucide-react';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -44,6 +45,7 @@ export function SuperAdminDashboard() {
   } = useAppStore();
 
   const [activeMenu, setActiveMenu] = useState<'products' | 'orders' | 'users' | 'dashboard'>('products');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [showProductDialog, setShowProductDialog] = useState(false);
   const [editingProduct, setEditingProduct] = useState<Product | null>(null);
@@ -194,7 +196,7 @@ export function SuperAdminDashboard() {
   return (
     <div className="min-h-screen bg-gray-50 flex">
       {/* Sidebar */}
-      <aside className="w-64 bg-white border-r border-gray-200 flex flex-col">
+      <aside className="hidden lg:flex w-64 bg-white border-r border-gray-200 flex-col">
         <div className="p-6 border-b">
           <h1 className="text-xl font-bold text-green-700">Organik Tarım</h1>
           <p className="text-sm text-gray-500">Super Admin Panel</p>
@@ -260,25 +262,102 @@ export function SuperAdminDashboard() {
       </aside>
 
       {/* Main Content */}
-      <main className="flex-1 overflow-auto">
-        <div className="p-8">
+      <main className="flex-1 overflow-auto w-full">
+        {/* Mobile Header */}
+        <header className="lg:hidden sticky top-0 z-10 bg-white border-b px-4 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Menu className="h-5 w-5" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="left" className="w-64 p-0">
+                <div className="p-6 border-b">
+                  <h1 className="text-xl font-bold text-green-700">Organik Tarım</h1>
+                  <p className="text-sm text-gray-500">Super Admin Panel</p>
+                </div>
+                
+                <nav className="flex-1 p-4 space-y-1">
+                  <button
+                    onClick={() => { setActiveMenu('dashboard'); setMobileMenuOpen(false); }}
+                    className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left transition-colors ${
+                      activeMenu === 'dashboard' ? 'bg-green-50 text-green-700' : 'hover:bg-gray-100'
+                    }`}
+                  >
+                    <LayoutDashboard className="w-5 h-5" />
+                    Dashboard
+                  </button>
+                  
+                  <button
+                    onClick={() => { setActiveMenu('products'); setMobileMenuOpen(false); }}
+                    className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left transition-colors ${
+                      activeMenu === 'products' ? 'bg-green-50 text-green-700' : 'hover:bg-gray-100'
+                    }`}
+                  >
+                    <Package className="w-5 h-5" />
+                    Ürünler
+                  </button>
+                  
+                  <button
+                    onClick={() => { setActiveMenu('orders'); setMobileMenuOpen(false); }}
+                    className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left transition-colors ${
+                      activeMenu === 'orders' ? 'bg-green-50 text-green-700' : 'hover:bg-gray-100'
+                    }`}
+                  >
+                    <ShoppingBag className="w-5 h-5" />
+                    Siparişler
+                  </button>
+                  
+                  <button
+                    onClick={() => { setActiveMenu('users'); setMobileMenuOpen(false); }}
+                    className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left transition-colors ${
+                      activeMenu === 'users' ? 'bg-green-50 text-green-700' : 'hover:bg-gray-100'
+                    }`}
+                  >
+                    <Users className="w-5 h-5" />
+                    Kullanıcılar
+                  </button>
+                </nav>
+                
+                <div className="p-4 border-t absolute bottom-0 w-full bg-white">
+                  <div className="flex items-center gap-3 px-4 py-3">
+                    <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
+                      <span className="text-green-700 font-medium">{user?.name?.charAt(0) || 'S'}</span>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-sm font-medium truncate">{user?.name || 'Super Admin'}</p>
+                    </div>
+                  </div>
+                  <Button variant="outline" className="w-full mt-2" onClick={() => { logout(); navigate('/login'); }}>
+                    <LogOut className="w-4 h-4 mr-2" />
+                    Çıkış Yap
+                  </Button>
+                </div>
+              </SheetContent>
+            </Sheet>
+            <h2 className="text-xl font-semibold text-green-700">Organik Tarım</h2>
+          </div>
+        </header>
+
+        <div className="p-4 sm:p-8">
           {/* Products Section */}
           {activeMenu === 'products' && (
             <div>
               <Card>
-                <CardHeader className="flex flex-row items-center justify-between">
+                <CardHeader className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                   <div>
                     <CardTitle>Ürün Yönetimi</CardTitle>
                     <p className="text-sm text-gray-500 mt-1">Tüm ürünleri yönetin ve düzenleyin</p>
                   </div>
-                  <div className="flex gap-2">
+                  <div className="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
                     <Input 
                       placeholder="Ürün ara..."
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      className="w-64"
+                      className="w-full sm:w-64"
                     />
-                    <Button onClick={openCreateDialog} className="bg-green-600 hover:bg-green-700">
+                    <Button onClick={openCreateDialog} className="bg-green-600 hover:bg-green-700 w-full sm:w-auto">
                       <Plus className="w-4 h-4 mr-2" />
                       Yeni Ürün
                     </Button>
@@ -388,7 +467,7 @@ export function SuperAdminDashboard() {
           
           <div className="space-y-4 py-4">
             {/* Basic Info */}
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className="text-sm font-medium">Ürün Adı *</label>
                 <Input 
@@ -412,7 +491,7 @@ export function SuperAdminDashboard() {
             </div>
 
             {/* Price & Stock */}
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div>
                 <label className="text-sm font-medium">Fiyat (₺) *</label>
                 <Input 

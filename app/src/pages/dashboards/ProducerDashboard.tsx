@@ -6,8 +6,9 @@ import {
   Leaf, AlertCircle, CheckCircle, Clock, Truck,
   ChevronRight, ArrowUpRight, ArrowDownRight, Image as ImageIcon,
   Grid3X3, List, Search, Filter, Download, Calendar,
-  MapPin, Phone, Mail, FileText, Settings, BadgeCheck
+  MapPin, Phone, Mail, FileText, Settings, BadgeCheck, Menu
 } from 'lucide-react';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
@@ -242,16 +243,16 @@ export function ProducerDashboard() {
       {/* Welcome Card */}
       <Card className="bg-gradient-to-r from-green-600 to-green-800 text-white">
         <CardContent className="p-6">
-          <div className="flex items-start justify-between">
-            <div>
-              <p className="text-green-100">Hoş Geldiniz,</p>
-              <h2 className="text-2xl font-bold mt-1">{user?.name}</h2>
-              <p className="text-green-100 mt-2 flex items-center gap-2">
-                <BadgeCheck className="h-4 w-4" />
-                Onaylı Üretici
-              </p>
-            </div>
-            <Avatar className="h-16 w-16 border-4 border-white/20">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div>
+                <p className="text-green-100">Hoş Geldiniz,</p>
+                <h2 className="text-2xl font-bold mt-1">{user?.name}</h2>
+                <p className="text-green-100 mt-2 flex items-center gap-2">
+                  <BadgeCheck className="h-4 w-4" />
+                  Onaylı Üretici
+                </p>
+              </div>
+              <Avatar className="h-16 w-16 sm:h-20 sm:w-20 border-4 border-white/20">
               <AvatarFallback className="bg-white/20 text-white text-xl">
                 {user?.name?.charAt(0).toUpperCase()}
               </AvatarFallback>
@@ -657,12 +658,61 @@ export function ProducerDashboard() {
       </aside>
 
       {/* Main Content */}
-      <main className="flex-1 overflow-auto">
-        <header className="sticky top-0 z-10 bg-white border-b px-6 py-4">
+      <main className="flex-1 overflow-auto w-full">
+        <header className="sticky top-0 z-10 bg-white border-b px-4 sm:px-6 py-4">
           <div className="flex items-center justify-between">
-            <h2 className="text-xl font-semibold">
-              {MENU_ITEMS.find(i => i.id === activeTab)?.label}
-            </h2>
+            <div className="flex items-center gap-3">
+              <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon" className="lg:hidden">
+                    <Menu className="h-5 w-5" />
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="left" className="w-64 p-0">
+                  <div className="p-4 border-b">
+                    <div className="flex items-center gap-3">
+                      <div className="p-2 rounded-lg bg-green-100">
+                        <Store className="h-5 w-5 text-green-600" />
+                      </div>
+                      <div>
+                        <h1 className="font-bold">Üretici Paneli</h1>
+                        <p className="text-xs text-muted-foreground">Üretim Yönetimi</p>
+                      </div>
+                    </div>
+                  </div>
+                  <nav className="flex-1 p-2 space-y-1">
+                    {MENU_ITEMS.map((item) => (
+                      <button
+                        key={item.id}
+                        onClick={() => { setActiveTab(item.id); setMobileMenuOpen(false); }}
+                        className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-colors ${
+                          activeTab === item.id
+                            ? 'bg-green-50 text-green-700 font-medium'
+                            : 'text-gray-600 hover:bg-gray-50'
+                        }`}
+                      >
+                        <item.icon className="h-4 w-4" />
+                        <span className="flex-1 text-left">{item.label}</span>
+                        {item.badge ? (
+                          <Badge variant={activeTab === item.id ? 'default' : 'secondary'} className="text-xs">
+                            {item.badge}
+                          </Badge>
+                        ) : null}
+                      </button>
+                    ))}
+                  </nav>
+                  <div className="p-4 border-t absolute bottom-0 w-full bg-white">
+                    <Button variant="outline" className="w-full" onClick={handleLogout}>
+                      <LogOut className="h-4 w-4 mr-2" />
+                      Çıkış Yap
+                    </Button>
+                  </div>
+                </SheetContent>
+              </Sheet>
+              <h2 className="text-xl font-semibold">
+                {MENU_ITEMS.find(i => i.id === activeTab)?.label}
+              </h2>
+            </div>
             <div className="flex items-center gap-2">
               <Button variant="ghost" size="icon" onClick={fetchDashboardData} disabled={refreshing}>
                 <div className={`${refreshing ? 'animate-spin' : ''}`}>

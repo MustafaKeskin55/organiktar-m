@@ -7,8 +7,9 @@ import {
   ArrowDownRight, BadgeCheck, UserCheck, MessageSquare,
   ClipboardList, BarChart3, PieChart, TrendingUp, Bell,
   MapPin, Phone, Mail, MoreVertical, ChevronDown,
-  ChevronRight, FileText, Printer, Download, CheckSquare
+  ChevronRight, FileText, Printer, Download, CheckSquare, Menu
 } from 'lucide-react';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
@@ -574,12 +575,61 @@ export function ManagerDashboard() {
       </aside>
 
       {/* Main Content */}
-      <main className="flex-1 overflow-auto">
-        <header className="sticky top-0 z-10 bg-white border-b px-6 py-4">
+      <main className="flex-1 overflow-auto w-full">
+        <header className="sticky top-0 z-10 bg-white border-b px-4 sm:px-6 py-4">
           <div className="flex items-center justify-between">
-            <h2 className="text-xl font-semibold">
-              {MENU_ITEMS.find(i => i.id === activeTab)?.label}
-            </h2>
+            <div className="flex items-center gap-3">
+              <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon" className="lg:hidden">
+                    <Menu className="h-5 w-5" />
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="left" className="w-64 p-0">
+                  <div className="p-4 border-b">
+                    <div className="flex items-center gap-3">
+                      <div className="p-2 rounded-lg bg-blue-100">
+                        <ClipboardList className="h-5 w-5 text-blue-600" />
+                      </div>
+                      <div>
+                        <h1 className="font-bold">Operasyon</h1>
+                        <p className="text-xs text-muted-foreground">Yönetici Paneli</p>
+                      </div>
+                    </div>
+                  </div>
+                  <nav className="flex-1 p-2 space-y-1">
+                    {MENU_ITEMS.map((item) => (
+                      <button
+                        key={item.id}
+                        onClick={() => { setActiveTab(item.id); setMobileMenuOpen(false); }}
+                        className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-colors ${
+                          activeTab === item.id
+                            ? 'bg-blue-50 text-blue-700 font-medium'
+                            : 'text-gray-600 hover:bg-gray-50'
+                        }`}
+                      >
+                        <item.icon className="h-4 w-4" />
+                        <span className="flex-1 text-left">{item.label}</span>
+                        {item.badge ? (
+                          <Badge variant={activeTab === item.id ? 'default' : 'secondary'} className="text-xs">
+                            {item.badge}
+                          </Badge>
+                        ) : null}
+                      </button>
+                    ))}
+                  </nav>
+                  <div className="p-4 border-t absolute bottom-0 w-full bg-white">
+                    <Button variant="outline" className="w-full" onClick={handleLogout}>
+                      <LogOut className="h-4 w-4 mr-2" />
+                      Çıkış Yap
+                    </Button>
+                  </div>
+                </SheetContent>
+              </Sheet>
+              <h2 className="text-xl font-semibold">
+                {MENU_ITEMS.find(i => i.id === activeTab)?.label}
+              </h2>
+            </div>
             <div className="flex items-center gap-2">
               <Button variant="ghost" size="icon" onClick={fetchDashboardData} disabled={refreshing}>
                 <RefreshCw className={`h-4 w-4 ${refreshing ? 'animate-spin' : ''}`} />

@@ -27,8 +27,8 @@ export function Footer() {
 
   return (
     <footer className="border-t bg-gray-50">
-      <div className="container mx-auto px-20 py-20">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+      <div className="container mx-auto px-4 md:px-8 lg:px-20 py-12 md:py-20">
+        <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div className="space-y-4">
             <Link to="/" className="inline-block">

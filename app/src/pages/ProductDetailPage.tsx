@@ -190,7 +190,7 @@ export function ProductDetailPage() {
 
             {/* Quantity Selector & Sepete Ekle Button */}
             <div className="space-y-4 pt-4 border-t">
-              <div className="flex items-center gap-4">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-4">
                 <span className="font-bold text-gray-700 text-sm">Adet / Miktar:</span>
                 <div className="flex items-center border rounded-xl overflow-hidden bg-white shadow-sm h-11">
                   <button
@@ -209,7 +209,7 @@ export function ProductDetailPage() {
                 </div>
               </div>
 
-              <div className="flex gap-3">
+              <div className="flex flex-wrap sm:flex-nowrap gap-3">
                 <Button
                   size="lg"
                   disabled={product.stock === 0}
@@ -233,7 +233,7 @@ export function ProductDetailPage() {
         {/* Detailed Tabs Panel */}
         <div className="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden mb-12">
           {/* Tab Links */}
-          <div className="flex border-b text-sm sm:text-base font-semibold">
+          <div className="flex overflow-x-auto whitespace-nowrap border-b text-sm sm:text-base font-semibold hide-scrollbar">
             <button
               onClick={() => setActiveTab('info')}
               className={`flex-1 py-4 text-center border-b-2 transition-all ${

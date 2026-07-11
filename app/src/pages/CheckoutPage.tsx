@@ -198,12 +198,12 @@ export function CheckoutPage() {
               </div>
             </div>
 
-            <div className="flex gap-4">
-              <Button variant="outline" className="flex-1" onClick={() => setStep(1)}>
+            <div className="flex flex-col-reverse sm:flex-row gap-4">
+              <Button variant="outline" className="flex-1 w-full" onClick={() => setStep(1)}>
                 Geri
               </Button>
               <Button 
-                className="flex-1 bg-green-600 hover:bg-green-700" 
+                className="flex-1 w-full bg-green-600 hover:bg-green-700" 
                 onClick={handleSubmit}
                 disabled={isLoading}
               >

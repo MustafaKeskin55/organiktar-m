@@ -251,7 +251,7 @@ export function ProducerDetailPage() {
           <div className="lg:col-span-2 space-y-6">
             
             {/* Tabs Header */}
-            <div className="bg-white rounded-xl border border-gray-100 p-2 flex gap-2">
+            <div className="bg-white rounded-xl border border-gray-100 p-2 flex gap-2 overflow-x-auto whitespace-nowrap hide-scrollbar">
               <button 
                 onClick={() => setActiveTab('products')}
                 className={`flex-1 py-3 px-4 rounded-lg text-sm font-semibold transition-all duration-200 ${
